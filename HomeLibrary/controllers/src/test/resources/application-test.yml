@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.99.100:8800/librarydb
+    username: pg
+    password: 12345
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: true
+  profiles:
+    active: test
+  main:
+    log-startup-info: on
+
+
+logging:
+  level:
+    com.netcracker.education: ${LOG_LEVEL:INFO}
+
+books:
+  top: ${TOP_BOOKS:2}
+  limit: ${BOOKS_LIMIT:1}
+
+rating_bounds:
+  low: ${LOW_BOUND:0}
+  high: ${HIGH_BOUND:10}

@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: ${JDBC_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driverClassName: ${DB_DRIVER}
+
+  jpa:
+    database: ${DB_NAME}
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: ${DB_PLATFORM}
+    open-in-view: true
+    
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+logging:
+  level:
+    com.netcracker.education: ${LOG_LEVEL:INFO}
+
+books:
+  top: ${TOP_BOOKS:3}
+  limit: ${BOOKS_LIMIT:3}
+
+rating_bounds:
+  low: ${LOW_BOUND:0}
+  high: ${HIGH_BOUND:10}
+  
+server:
+  port: 8080
